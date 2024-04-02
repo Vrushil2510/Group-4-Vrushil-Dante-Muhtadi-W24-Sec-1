@@ -16,7 +16,7 @@ public class TaskManager : ITaskManager
 {
     private List<Entities.Task> tasks = new();
 
-    public void AddTask()
+    public void AddTask() //Adds a Task
     {
         while (true)
         {
@@ -31,7 +31,7 @@ public class TaskManager : ITaskManager
         }
     }
 
-    public void EditTask()
+    public void EditTask() //Allows a user to edit an already added task
     {
         if (tasks.Count == 0)
         {
@@ -59,7 +59,7 @@ public class TaskManager : ITaskManager
         UpdateTasks();
     }
 
-    public void MarkTaskAsCompleted()
+    public void MarkTaskAsCompleted() //Marks a task as complete
     {
         if (tasks.Count == 0)
         {
@@ -77,7 +77,7 @@ public class TaskManager : ITaskManager
         UpdateTasks();
     }
 
-    public void DeleteTask()
+    public void DeleteTask()// Deletes a Task from the list
     {
         if (tasks.Count == 0)
         {
@@ -95,7 +95,7 @@ public class TaskManager : ITaskManager
         UpdateTasks();
     }
 
-    public void UpdateTasks()
+    public void UpdateTasks() //Appends task based on used parameters
     {
         File.WriteAllLines("tasks.txt", tasks.Select(task => $"{task.Name}|{task.IsCompleted}"));
     }
@@ -111,7 +111,7 @@ public class TaskManager : ITaskManager
         }
     }
 
-    public void DisplayTasks()
+    public void DisplayTasks() //Displays the list of tasks on the UI
     {
         AnsiConsole.WriteLine("Task Hub Pro:");
 
