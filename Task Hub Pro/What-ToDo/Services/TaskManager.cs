@@ -1,7 +1,7 @@
 ﻿using Spectre.Console;
 
 namespace What_ToDo.Services;
-
+//CSCN72040 - Task Hub Pro by Vrushil, Dante, Muhtadi
 public interface ITaskManager
 {
     void AddTask();
@@ -68,7 +68,7 @@ public class TaskManager : ITaskManager
 
         var selectedTask = AnsiConsole.Prompt(
             new SelectionPrompt<Entities.Task>()
-                .Title("Select a task to mark as completed:")
+                .Title("Select a task to mark as completed: ")
                 .AddChoices(tasks)
                 .UseConverter(task => task.Name)
         );
